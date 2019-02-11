@@ -10,7 +10,7 @@ var sum_tests_int8 = []struct {
 }{
 	{1, 2, 3},
 	{4, 5, 9},
-	{120, 1, 119},
+	{5, 7, 12},
 }
 
 var sum_tests_int32 = []struct {
@@ -20,7 +20,7 @@ var sum_tests_int32 = []struct {
 }{
 	{1, 2, 3},
 	{4, 5, 9},
-	{120, 1, 119},
+	{5, 7, 12},
 }
 
 var sum_tests_int64 = []struct {
@@ -30,19 +30,18 @@ var sum_tests_int64 = []struct {
 }{
 	{1, 2, 3},
 	{4, 5, 9},
-	{120, 1, 119},
+	{5, 7, 12},
 }
 
-/*
 var sum_tests_float64 = []struct {
 	n1       float64
 	n2       float64
 	expected float64
 }{
-	{1.4, 1.3, 1.8},
-	{4, 5, 9},
-	{120, 1, 119},
-}*/
+	{1.4, 1.3, 2.7},
+	{4.5, 5.6, 10.1},
+	{21.73, 3.12, 24.85},
+}
 
 var sum_tests_uint32 = []struct {
 	n1       uint32
@@ -51,7 +50,7 @@ var sum_tests_uint32 = []struct {
 }{
 	{1, 2, 3},
 	{4, 5, 9},
-	{120, 1, 119},
+	{5, 7, 12},
 }
 
 func TestSumInt8(t *testing.T) {
@@ -78,14 +77,13 @@ func TestSumInt64(t *testing.T) {
 	}
 }
 
-/*
 func TestSumFloat64(t *testing.T) {
 	for _, v := range sum_tests_float64 {
 		if val := SumFloat64(v.n1, v.n2); val != v.expected {
-			t.Errorf("Sum(%d, %d) returned %d, expected %d", v.n1, v.n2, val, v.expected)
+			t.Errorf("Sum(%f, %f) returned %f, expected %f", v.n1, v.n2, val, v.expected)
 		}
 	}
-}*/
+}
 
 func TestSumUint32(t *testing.T) {
 	for _, v := range sum_tests_uint32 {
