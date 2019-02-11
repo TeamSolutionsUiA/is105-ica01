@@ -10,7 +10,7 @@ import (
 func main() {
 	c := make(chan string)
 	go boring.Boring01("boring!")
-	for i := 0;i<10 ; i++ {
+	for i := 0;; i++ {
 		fmt.Printf("You say: %q\n", <-c) 
 	}
 
