@@ -2,7 +2,6 @@ package sum
 
 import "testing"
 
-// Check https://golang.org/ref/spec#Numeric_types and stress the limits!
 var sum_tests_int8 = []struct {
 	n1       int8
 	n2       int8
