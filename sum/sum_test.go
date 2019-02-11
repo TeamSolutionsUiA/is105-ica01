@@ -8,9 +8,9 @@ var sum_tests_int8 = []struct {
 	n2       int8
 	expected int8
 }{
-	{1, 2, 3},
+	{90, 37, 127},
 	{4, 5, 9},
-	{5, 7, 12},
+	{35, -45, -10},
 }
 
 var sum_tests_int32 = []struct {
@@ -19,8 +19,8 @@ var sum_tests_int32 = []struct {
 	expected int32
 }{
 	{1, 2, 3},
-	{4, 5, 9},
-	{5, 7, 12},
+	{2635000, 2357000, 4992000},
+	{5, -7, -2},
 }
 
 var sum_tests_int64 = []struct {
@@ -29,8 +29,8 @@ var sum_tests_int64 = []struct {
 	expected int64
 }{
 	{1, 2, 3},
-	{4, 5, 9},
-	{5, 7, 12},
+	{2635, 2357, 4992},
+	{5, -7, -2},
 }
 
 var sum_tests_float64 = []struct {
