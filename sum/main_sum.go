@@ -4,7 +4,7 @@ import (
 "fmt"	
 "strconv"
 "os";
-"./sum";	
+"github.com/TeamSolutionsUiA/ica01/is105-ica02/sum/sum";	
 )
 
 
@@ -15,9 +15,14 @@ v3, err :=strconv.ParseInt(v1[2],10,64);
 
 
 tot :=sum.SumInt64(v2, v3)
-
+if err==nil {
 fmt.Println(tot);
-fmt.Println(err);
+
+}else {
+fmt.Println(err);	
+}
+
+
 
 }
 
