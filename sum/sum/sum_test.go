@@ -8,7 +8,7 @@ var sum_tests_int8 = []struct {
 	expected int8
 }{
 	{90, 37, 127},
-	{4, 5, 9},
+	{127, 1, 128},
 	{35, -45, -10},
 }
 
@@ -18,8 +18,8 @@ var sum_tests_int32 = []struct {
 	expected int32
 }{
 	{1, 2, 3},
-	{2635000, 2357000, 4992000},
-	{5, -7, -2},
+	{2145126647, 2357000, 2147483647},
+	{2145126648, 2357000, 2147483648},
 }
 
 var sum_tests_int64 = []struct {
@@ -49,7 +49,7 @@ var sum_tests_uint32 = []struct {
 }{
 	{1, 2, 3},
 	{4, 5, 9},
-	{5, 7, 12},
+	{5, -7, -2},
 }
 
 func TestSumInt8(t *testing.T) {
