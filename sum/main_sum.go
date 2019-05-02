@@ -6,23 +6,33 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/TeamSolutionsUiA/is105-ica02/sum/sum"
+	"github.com/TeamSolutionsUiA/is105-ica01/sum/sum"
 )
 
 func main() {
-	v1 := os.Args
-	i1, err := strconv.ParseInt(v1[1], 10, 64)
+	args := os.Args
 	isFloat := false
-	if err != nil {
-		//printe ut om out of range
-		// parse string og isFloat = true om syntax feil
-		log.Fatal(err)
+	if len(args) != 3{
+		fmt.Println("Bruk to argumenter")
+		os.Exit(2)
 	}
-	i2, err := strconv.ParseInt(v1[2], 10, 64)
+	i1, err := strconv.ParseInt(args[1],10, 64)
 	if err != nil {
-		log.Fatal(err)
+		isFloat = true
+	}
+	i2, err := strconv.ParseInt(args[2], 10, 64)
+	if err != nil {
+		isFloat = true
 	}
 	if isFloat{
+		f1, err := strconv.ParseFloat(args[1], 64)
+		if err != nil {
+			log.Fatal(err)
+	}
+		f2, err := strconv.ParseFloat(args[2], 64)
+		if err != nil {
+			log.Fatal(err)
+		}
 		tot := sum.SumFloat64(f1, f2)
 		fmt.Println(tot)
 	} else{
