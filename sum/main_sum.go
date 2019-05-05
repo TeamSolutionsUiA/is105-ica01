@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
+	"math"
 	"os"
 	"strconv"
 
@@ -23,6 +24,15 @@ func main() {
 	i2, err := strconv.ParseInt(args[2], 10, 64)
 	if err != nil {
 		isFloat = true
+	}
+	if i1 > 0 {
+		if i1 > math.MaxInt64-i2 {
+			isFloat = true
+		}
+	} else {
+		if i1 < math.MinInt64-i2 {
+			isFloat = true
+		}
 	}
 	if isFloat{
 		f1, err := strconv.ParseFloat(args[1], 64)
